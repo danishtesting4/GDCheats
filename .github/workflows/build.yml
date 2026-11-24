@@ -7,17 +7,18 @@ on:
 
 jobs:
   build:
-    name: Build (${{ matrix.platform }})
+    name: Build (${{ matrix.target }})
     strategy:
       fail-fast: false
       matrix:
-        platform: [win, android64]
+        target: [Win64, Android64]
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - uses: geode-sdk/build-geode-mod@main
         with:
-          sdk: v6.0.0-beta.2
-          platform: ${{ matrix.platform }}
+          sdk: 6.0.0-beta.2
+          target: ${{ matrix.target }}
           build: true
           publish: false
+          combine: true
