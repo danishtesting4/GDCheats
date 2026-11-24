@@ -24,8 +24,17 @@ namespace {
         }
 
         bool init(float) {
-            if (!FLAlertLayer::init(nullptr, "oll.fx // GD TOOLKIT",
-                "close", nullptr, 300.f, true, 190.f)) return false;
+            if (!FLAlertLayer::init(
+                nullptr,
+                "oll.fx // GD TOOLKIT",
+                "Practice-focused toolkit controls.",
+                "Close",
+                nullptr,
+                300.f,
+                true,
+                190.f,
+                0.8f
+            )) return false;
 
             auto win = CCDirector::sharedDirector()->getWinSize();
             auto panel = CCScale9Sprite::create("square02_001.png",
